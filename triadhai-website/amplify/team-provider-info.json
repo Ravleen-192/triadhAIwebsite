@@ -17,6 +17,12 @@
           "appId": "d3rh2zdnbybqg8",
           "type": "cicd"
         }
+      },
+      "function": {
+        "sendWPMail": {
+          "deploymentBucketName": "amplify-triadhaiwebsite-dev-105317-deployment",
+          "s3Key": "amplify-builds/sendWPMail-2b73777a3656784e316c-build.zip"
+        }
       }
     }
   }

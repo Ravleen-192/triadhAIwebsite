@@ -5,5 +5,29 @@
       "type": "cicd",
       "lastPushTimeStamp": "2022-12-21T05:30:19.879Z"
     }
+  },
+  "function": {
+    "sendWPMail": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
+    }
+  },
+  "api": {
+    "SendWPMail": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "sendWPMail",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    }
   }
 }
