@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-triadhaiwebsite-dev-105317-authRole",
+      "UnauthRoleArn": "arn:aws:iam::211544418920:role/amplify-triadhaiwebsite-dev-105317-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::211544418920:role/amplify-triadhaiwebsite-dev-105317-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-triadhaiwebsite-dev-105317-deployment",
+      "UnauthRoleName": "amplify-triadhaiwebsite-dev-105317-unauthRole",
+      "StackName": "amplify-triadhaiwebsite-dev-105317",
+      "StackId": "arn:aws:cloudformation:us-west-2:211544418920:stack/amplify-triadhaiwebsite-dev-105317/b6fa00d0-80ef-11ed-abd9-024bb41d01e5",
+      "AmplifyAppId": "d3rh2zdnbybqg8"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3rh2zdnbybqg8",
+          "type": "cicd"
+        }
+      }
+    }
+  }
+}
