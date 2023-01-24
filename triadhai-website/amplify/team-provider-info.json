@@ -21,7 +21,11 @@
       "function": {
         "sendWPMail": {
           "deploymentBucketName": "amplify-triadhaiwebsite-dev-105317-deployment",
-          "s3Key": "amplify-builds/sendWPMail-2b73777a3656784e316c-build.zip"
+          "s3Key": "amplify-builds/sendWPMail-6f514e365a466d33724d-build.zip"
+        },
+        "AddtoDB": {
+          "deploymentBucketName": "amplify-triadhaiwebsite-dev-105317-deployment",
+          "s3Key": "amplify-builds/AddtoDB-355a574a393138795135-build.zip"
         }
       }
     }

@@ -2,7 +2,6 @@ import json
 from email_send import *
 from smtplib import SMTPResponseException
 from urllib.parse import unquote
-import json
 import logging
 import boto3
 import botocore
@@ -18,7 +17,7 @@ def create_presigned_url():
         response = s3_client.generate_presigned_url('get_object',
                                                     Params={'Bucket': bucketName,
                                                             'Key': value1},
-                                                    ExpiresIn=10000)
+                                                    ExpiresIn=604800)
     except Exception as e:
         print(e)
         logging.error(e)
@@ -29,10 +28,14 @@ def create_presigned_url():
 
    
 def handler(event, context):
-    print('received event:')
-    print('received context:')
+   
     print(context)
     print(event)
+    #invokeLam = boto3.client("lambda", region_name="us-west-2")
+    
+    #For InvocationType = "Event"
+    #resp = invokeLam.invoke(FunctionName = "AddtoDB-dev", InvocationType = "Event", Payload = json.dumps(event))
+    #print(resp)
     surl = create_presigned_url()
     to_address = str(event['queryStringParameters']['email'])
     name =  unquote(str(event['queryStringParameters']['name']))
@@ -46,8 +49,11 @@ def handler(event, context):
     try:
         es = email_sender()
         es.connect() 
+        print('connect')
         msg = compose_msg(to_address,name,surl) 
-        es.send_email(to_address,msg)
+        msg2 = ceo_compose_msg(to_address,name,title, company,phone,surl)
+        print(msg2)
+        es.send_email(to_address,msg, msg2)
         print("Message sent successfully")
         es.disconnect()
         return {
@@ -57,11 +63,12 @@ def handler(event, context):
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
         },
-        'body': json.dumps('Message sent successfully!')
+        'body': json.dumps(surl)
         }
     except SMTPResponseException as e:
         error_code = e.smtp_code
         error_message = e.smtp_error
+        print(error_message)
         return {
         'statusCode': error_code,
         'headers': {

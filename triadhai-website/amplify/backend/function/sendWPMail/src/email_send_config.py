@@ -1,5 +1,9 @@
-SMTP_SERVER = 'smtp.gmail.com'
+SMTP_SERVER = 'email-smtp.us-west-2.amazonaws.com' #'smtp.triadh.com'
 PORT_ADDRESS = 587
-FROM_ADDR = 'ravleenbist@gmail.com'
-PASSWORD = 'yqgxpzedeprhxrcc'
-CC_ADDR   = ['meravleen@yahoo.co.in'] #comma separated cc addresses, remove or add.
+SMTP_USER = 'AKIATCQIHVJUMVAE66XX'
+SMTP_PASSWORD = 'BKseahjEVQGZQ4v+N/sm1qtRTlkC3JOv4MbF3onqqCcs'
+FROM_ADDR = 'info@triadh.com'
+PASSWORD = 'senthil@2208'
+#PASSWORD = 'yqgxpzedeprhxrcc'
+#CC_ADDR   = ['meravleen@yahoo.co.in'] #comma separated cc addresses, remove or add.
+BCC_ADDR   = ['senthil@triadh.com'] #comma separated Bcc addresses, remove or add.y
